@@ -4,7 +4,7 @@ struct ContentView: View {
     @State private var counter = 0
 
     var body: some View {
-        VStack(spacing: 10){
+        VStack(spacing: 11){
             HStack {
                 Rectangle().fill(Color.red).frame(width: 30, height: 30)
                 Text("Counter: \(counter)")
@@ -24,7 +24,8 @@ struct ContentView: View {
                         .cornerRadius(10) // Buton köşe yuvarlama
                 }
                 Button(action: {
-                    counter = counter - 1
+                    if counter > 0 {
+                        counter = counter - 1                    }
                 }) {
                     Text("Decrease")
                         .font(.system(size: 25))
